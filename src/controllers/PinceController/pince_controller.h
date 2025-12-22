@@ -2,10 +2,10 @@
 #define PINCE_CONTROLLER_H
 
 #include <Servo.h>
-#include "../MainController/main_controller.h"
-#include "../BaseController/base_controller.h"
-#include "../../state_machines/PinceStates/pince_manual_state.h"
-#include "../../state_machines/PinceStates/pince_reloading_state.h"
+#include "controllers/MainController/main_controller.h"
+#include "controllers/BaseController/base_controller.h"
+#include "state_machines/PinceStates/pince_manual_state.h"
+#include "state_machines/PinceStates/pince_reloading_state.h"
 
 class MainController;
 
@@ -19,13 +19,13 @@ public:
      * Move the pince vertically
      * 1 = up, 0 = stop, -1 = down
      */
-    void translateVertical(int);
+    void translateVertical(int32_t);
     
     /**
      * Move the pince horizontally
      * 1 = left, 0 = stop, -1 = right
      */
-    void translateHorizontal(int);
+    void translateHorizontal(int32_t);
     
     /**
      * Move the pince horizontally
@@ -78,22 +78,22 @@ public:
     /**
      * Returns the current angle of the pince's poignet
      */
-    int getCurrentPoignetAngle();
+    int32_t getCurrentPoignetAngle();
 
     /**
      * Sets the current angle of the pince's poignet
      */
-    void setCurrentPoignetAngle(int);
+    void setCurrentPoignetAngle(int32_t);
 
     /**
      * Returns the current angle of the pince's flip
      */
-    int getCurrentFlipAngle();
+    int32_t getCurrentFlipAngle();
 
     /**
      * Sets the current angle of the pince's flip
      */
-    void setCurrentFlipAngle(int);
+    void setCurrentFlipAngle(int32_t);
 
     /**
      * Ouvrir la pince
@@ -109,7 +109,7 @@ public:
      * Déplacer le poignet à une position
      * @param angle Angle du poignet
      */
-    void movePoignetPince(int);
+    void movePoignetPince(int32_t angle);
 
 private:
     MainController *_mainController = nullptr;
@@ -118,10 +118,10 @@ private:
     Servo _pincePoignetServo;
     Servo _pinceFlipServo;
 
-    int _currentPincePoignetAngle = 0;
-    int _currentPinceFlipAngle = PINCE_FLIP_MIN_ANGLE;
-    int _currentPinceDoigtAngle1 = 0;
-    int _currentPinceDoigtAngle2 = 0;
+    int32_t _currentPincePoignetAngle = 0;
+    int32_t _currentPinceFlipAngle = PINCE_FLIP_MIN_ANGLE;
+    int32_t _currentPinceDoigtAngle1 = 0;
+    int32_t _currentPinceDoigtAngle2 = 0;
     bool _hasReachedReloading = false;
     bool _hasDroppedGamePieces = false;
     bool _areDoigtsOpen = false;

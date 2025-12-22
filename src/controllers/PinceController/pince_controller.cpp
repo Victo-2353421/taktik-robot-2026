@@ -31,16 +31,16 @@ void PinceController::update()
     this->_pinceDoigtServo2.write(this->_currentPinceDoigtAngle2);
 }
 
-void PinceController::translateVertical(int value)
+void PinceController::translateVertical(int32_t value)
 {
-    int mappedValue = map(value, -1, 1, 0, 255);
+    int32_t mappedValue = map(value, -1, 1, 0, 255);
 
     CrcLib::SetPwmOutput(PINCE_VERTICAL_DRIVE_PIN, mappedValue);
 }
 
-void PinceController::translateHorizontal(int value)
+void PinceController::translateHorizontal(int32_t value)
 {
-    int mappedValue = map(value, -1, 1, 0, 255);
+    int32_t mappedValue = map(value, -1, 1, 0, 255);
 
     CrcLib::SetPwmOutput(PINCE_HORIZONTAL_DRIVE_PIN, mappedValue);
 }
@@ -108,22 +108,22 @@ bool PinceController::lowerLimitReached()
     return CrcLib::GetDigitalInput(PINCE_LOWER_LIMIT_SWITCH_PIN) == HIGH;
 }
 
-int PinceController::getCurrentPoignetAngle()
+int32_t PinceController::getCurrentPoignetAngle()
 {
     return this->_currentPincePoignetAngle;
 }
 
-void PinceController::setCurrentPoignetAngle(int angle)
+void PinceController::setCurrentPoignetAngle(int32_t angle)
 {
     this->_currentPincePoignetAngle = angle;
 }
 
-int PinceController::getCurrentFlipAngle()
+int32_t PinceController::getCurrentFlipAngle()
 {
     return this->_currentPinceFlipAngle;
 }
 
-void PinceController::setCurrentFlipAngle(int angle)
+void PinceController::setCurrentFlipAngle(int32_t angle)
 {
     this->_currentPinceFlipAngle = angle;
 }

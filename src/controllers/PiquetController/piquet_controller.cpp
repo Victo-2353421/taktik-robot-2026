@@ -80,12 +80,12 @@ void PiquetController::setReachedReloading(bool value)
     this->_hasReachedReloading = value;
 }
 
-int PiquetController::getCurrentAngle()
+int32_t PiquetController::getCurrentAngle()
 {
     return this->_currentPiquetAngle;
 }
 
-void PiquetController::setCurrentAngle(int angle)
+void PiquetController::setCurrentAngle(int32_t angle)
 {
     if (angle < PIQUET_IDLE_TARGET_ROTATION) {
         angle = PIQUET_IDLE_TARGET_ROTATION;

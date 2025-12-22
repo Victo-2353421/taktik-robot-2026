@@ -57,7 +57,7 @@ void MainController::handleMove()
 
 void MainController::checkForStartReloadingSequence()
 {
-    int buttonState = CrcLib::ReadDigitalChannel(RELOAD_KEY);
+    int32_t buttonState = CrcLib::ReadDigitalChannel(RELOAD_KEY);
     if (buttonState == HIGH && !_startedReloadingSequence)
     {
         this->_startedReloadingSequence = true;

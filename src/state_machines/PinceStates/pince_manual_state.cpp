@@ -67,9 +67,9 @@ void PinceManualState::controlHorizontalMovement()
 
 void PinceManualState::controlOpening()
 {
-    int doigt_val = CrcLib::ReadDigitalChannel(CONTROLLER_PINCE_DOIGTS);
+    int32_t doigt_val = CrcLib::ReadDigitalChannel(CONTROLLER_PINCE_DOIGTS);
 
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - this->previousDoigtMillis >= PINCE_POIGNET_DEBOUNCE_TIME)
     {
         if (doigt_val == HIGH)
@@ -92,7 +92,7 @@ void PinceManualState::controlPoignet()
     float poignetLeft = CrcLib::ReadAnalogChannel(CONTROLLER_PINCE_POIGNET_LEFT);
     float poignetRight = CrcLib::ReadAnalogChannel(CONTROLLER_PINCE_POIGNET_RIGHT);
 
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - this->previousPoignetAngleMillis >= PINCE_POIGNET_DEBOUNCE_TIME)
     {
         if (poignetLeft > 0)
@@ -112,7 +112,7 @@ void PinceManualState::handleManualFlipAngle()
 {
     uint8_t isFlipped = CrcLib::ReadDigitalChannel(CONTROLLER_PINCE_MANUAL_FLIP);
 
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - previousManualFlipMillis >= PINCE_FLIP_MANUAL_DELAY)
     {
         if (isFlipped == HIGH)

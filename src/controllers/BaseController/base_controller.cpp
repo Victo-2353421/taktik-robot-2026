@@ -3,13 +3,13 @@
 void BaseController::initialize(BaseController *controller)
 {
     Serial.println("BaseController::initialize() not implemented.");
-    while (true);
+    exit(1);
 }
 
 void BaseController::update()
 {
     Serial.println("BaseController::update() not implemented.");
-    while (true);
+    exit(1);
 }
 
 void BaseController::changeState(State *newState)

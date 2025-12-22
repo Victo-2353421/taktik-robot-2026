@@ -22,9 +22,9 @@ public:
 
 private:
     PiquetController *_controller;
-    unsigned long previousMillis = 0;
-    unsigned long previousRotatorMillis = 0;
-    unsigned long previousStopperMillis = 0;
+    uint32_t previousMillis = 0;
+    uint32_t previousRotatorMillis = 0;
+    uint32_t previousStopperMillis = 0;
 
     bool _isTowardsPince = false;
     bool _isStopperClosed = false;

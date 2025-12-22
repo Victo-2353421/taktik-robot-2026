@@ -18,7 +18,7 @@ public:
 
 private:
     PiquetController *_controller;
-    unsigned long previousMillis = 0;
+    uint32_t previousMillis = 0;
 };
 
 #endif

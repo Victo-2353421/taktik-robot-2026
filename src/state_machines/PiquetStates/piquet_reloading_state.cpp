@@ -18,7 +18,7 @@ void PiquetReloadingState::onExecute()
         return;
     }
 
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - previousMillis >= PIQUET_SPEED)
     {
         previousMillis = currentMillis;

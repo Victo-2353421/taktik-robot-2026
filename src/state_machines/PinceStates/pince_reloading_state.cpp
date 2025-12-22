@@ -65,7 +65,7 @@ void PinceReloadingState::handleAutomaticFlipAngle()
         return;
     }
 
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - previousMillis >= PINCE_FLIP_SPEED)
     {
         _controller->setCurrentFlipAngle(_controller->getCurrentFlipAngle() + 1);
@@ -103,7 +103,7 @@ void PinceReloadingState::checkHasDroppedGamePieces()
     this->_controller->openPince();
 
     // Wait for the drop delay to be met
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - this->previousDropDelayMillis >= PINCE_FLIP_SPEED)
     {
         this->_controller->setDroppedGamePieces(true);

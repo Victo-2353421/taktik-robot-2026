@@ -54,12 +54,12 @@ public:
     /**
      * Returns the current angle of the piquet
      */
-    int getCurrentAngle();
+    int32_t getCurrentAngle();
 
     /**
      * Sets the current angle of the piquet
      */
-    void setCurrentAngle(int);
+    void setCurrentAngle(int32_t);
 
     /**
      * Open the piquet stopper
@@ -73,8 +73,8 @@ public:
 
 private:
     MainController *_mainController = nullptr;
-    int _currentPiquetAngle = 0;
-    int _currentStopperAngle = 0;
+    int32_t _currentPiquetAngle = 0;
+    int32_t _currentStopperAngle = 0;
     Servo _stopperServo;
     Servo _piquetServo;
 

@@ -3,9 +3,8 @@
 
 #include <Servo.h>
 #include "pin_mappings.h"
-#include "../../controllers/PinceController/pince_controller.h"
-#include "../../state_machines/state.h"
-#include "variables.h"
+#include "controllers/PinceController/pince_controller.h"
+#include "state_machines/state.h"
 
 class PinceController;
 
@@ -20,10 +19,10 @@ public:
 
 private:
     PinceController *_controller;
-    unsigned long previousMillis = 0;
-    unsigned long previousDoigtMillis = 0;
-    unsigned long previousManualFlipMillis = 0;
-    unsigned long previousPoignetAngleMillis = 0;
+    uint32_t previousMillis = 0;
+    uint32_t previousDoigtMillis = 0;
+    uint32_t previousManualFlipMillis = 0;
+    uint32_t previousPoignetAngleMillis = 0;
 
     uint16_t _currentPoignetAngle = PINCE_POIGNET_IDLE_ANGLE;
     uint8_t _flippedState = 1;

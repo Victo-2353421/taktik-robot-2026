@@ -46,7 +46,7 @@ void PiquetManualState::handleRotator()
 {
     int8_t yButton = CrcLib::ReadDigitalChannel(CONTROLLER_PIQUET_TOGGLE_ROTATOR);
 
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - previousRotatorMillis >= PIQUET_MANUAL_ROTATOR_DELAY)
     {
         if (yButton == HIGH)
@@ -65,7 +65,7 @@ void PiquetManualState::handleStopper()
 {
     int8_t bButton = CrcLib::ReadDigitalChannel(CONTROLLER_PIQUET_TOGGLE_STOPPER);
 
-    unsigned long currentMillis = millis();
+    uint32_t currentMillis = millis();
     if (currentMillis - previousStopperMillis >= PIQUET_MANUAL_STOPPER_DELAY)
     {
         if (bButton == HIGH)

@@ -48,8 +48,8 @@ public:
 
 private:
     PinceController *_controller;
-    unsigned long previousMillis = 0;
-    unsigned long previousDropDelayMillis = 0;
+    uint32_t previousMillis = 0;
+    uint32_t previousDropDelayMillis = 0;
 
     bool _hasReachedVerticalReloadingLimit = false;
     bool _hasReachedHorizontalReloadingLimit = false;
